@@ -1,0 +1,67 @@
+{
+  "update_version": 2,
+  "note": "enable SmsoIP for Telstra_AU",
+  "globalsettings_update": 
+  {
+    "defaultsetting": {
+    },
+    "nohitsetting": {
+    },
+    "globalsetting": [
+      {
+        "mnoname": "Telstra_AU",
+        "enable_default_sms_fallback": true
+      }
+    ]
+  },  
+  "imsprofile_update": {
+    "profile": [
+      {
+        "name": "TEL VoLTE",
+        "mnoname": "Telstra_AU",
+        "network": [
+          {
+            "type": "lte",
+            "services": [
+              "mmtel",
+              "mmtel-video"
+          ],
+          "enabled": true
+          },
+          {
+            "type": "wifi",
+            "services": [
+              "mmtel",
+              "mmtel-video",
+              "smsip"
+          ],
+          "enabled": true
+          }
+        ]        
+      },
+      {
+        "name": "VAU Emergency",
+        "mnoname": "Vodafone_AU",
+        "use_pem_header": false,
+        "audio_codec": "EVS,AMRBE-WB,AMR-WB,AMRBE,AMR,DTMFWB,DTMF",
+        "enable_evs_codec": true,
+        "evs_channel_aware_receive": "0",
+        "session_expires": 900,
+        "reg_expires": 7200,
+        "ringing_timer": 90,
+        "ringback_timer": 90,
+        "early_media_rtp_timeout_timer": 2,
+        "notify_history_info": "toast_only",
+        "network": [
+          {
+            "type": "lte,wifi",
+            "services": [
+              "mmtel"
+            ],
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  }
+}
